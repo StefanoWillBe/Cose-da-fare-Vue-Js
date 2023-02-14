@@ -9,25 +9,25 @@ var app = new Vue(
                     text: "Fare i compiti",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YYYY HH:mm:ss")
+                    date: dayjs().format("DD/MM/YY")
                 },
                 {
                     text:  "Fare la Spesa",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YYYY HH:mm:ss")
+                    date: dayjs().format("DD/MM/YY")
                 },
                 {
                     text: "Fare il bucato",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YYYY HH:mm:ss")
+                    date: dayjs().format("DD/MM/YY")
                 },
                 {
                     text: "Portare la macchina dal meccanico",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YYYY HH:mm:ss")
+                    date: dayjs().format("DD/MM/YY")
                 }
             ],
         },
@@ -38,7 +38,7 @@ var app = new Vue(
                         text: this.userNewTodo,
                         visible: true,
                         isDone: false,
-                        date: dayjs().format("DD/MM/YYYY  HH:mm:ss")
+                        date: dayjs().format("DD/MM/YY")
                     });
                     this.userNewTodo = "";
                 }
@@ -49,7 +49,7 @@ var app = new Vue(
             },
             filterTodos(){
                 this.todos.forEach((element) =>{
-                    if(element.text.toLocaleLowerCase().includes(this.userFilter.toLowerCase())){
+                    if(element.text.toLowerCase().includes(this.userFilter.toLowerCase())){
                         element.visible= true;
                     } else {
                         element.visible= false;
@@ -57,7 +57,7 @@ var app = new Vue(
                 })
             },
             changeText(index){
-                this.todos[index].isDone= !this.todos[index].isDone;
+                this.todos[index].isDone = !this.todos[index].isDone;
             }
 
         }

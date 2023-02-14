@@ -55,9 +55,17 @@
 	list-style-type: none;
 	text-align: left;
 	font-size: 16px;
-	padding: 5px;
+	padding: 5px 0;
 	border-bottom: 1px solid gray;
+	
 }
+
+.hover:hover {
+	background-color: rgb(100, 204, 169);
+	color: white;
+	padding: 5px 5px 5px 0;
+}
+
 .todo-list li .span-class {
 	float: right;
 }
@@ -93,10 +101,10 @@
 	color: #008000;
 }
 
-}
 .todo-date {
+
 	position: absolute;
-	right: 108px;
+	right: 58px;
 	top: 11px;
 
 }

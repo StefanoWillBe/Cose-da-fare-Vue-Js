@@ -24,24 +24,32 @@
 
         <!-- LOGO -->
         <div class="logo">
-            <img src="img/memo.png" alt="Logo">
+            <img src="img/memo.png" 
+            alt="Logo Todo">
         </div>
         <!-- LOGO -->
 
         <!--        NEW TODO-->
         <div class="new-todo">
+
             <label>
                 <input v-model="userNewTodo" @keyup.enter="addNewTodo"
-                       type="text" class="text-input"
-                       placeholder="Cosa da fare">
+                    type="text" class="text-input"
+                    placeholder="Cose da fare">
             </label>
-            <button class="button" @click="addNewTodo"> Aggiungi TODO</button>
+
+            <button class="button" 
+                @click="addNewTodo"> 
+                Aggiungi TODO
+            </button>
             <!--         END NEW TODO-->
 
             <!--        SEARCH TODO-->
             <label>
                 <input type="text" class="search"
-                       placeholder="Ricerca..." v-model="userFilter" @keyup="filterTodos">
+                    placeholder="Ricerca..." 
+                    v-model="userFilter" 
+                    @keyup="filterTodos">
             </label>
             <!--        SEARCH TODO-->
 
@@ -50,30 +58,35 @@
         <!-- ADD LIST TODOS -->
         <div class="todos-container">
 
-            <ul class="todo-list">
+            <ul v-if="todos.length > 0" class="todo-list">
 
                 <!-- SINGOLO TODO-->
                 <li v-for="(todo, index) in todos"
                     v-if="todo.visible"
                     :class="{done: todo.isDone}">
 
-                    {{ todo.text }}
+                    <span class="hover">{{ todo.text }}</span>
 
-                    <span class="todo-date">   {{ todo.date}}</span>
-
-
-                    <!-- ICONE DI FONT AWESONE-->
-                    <span class="span-class" @click="removeToDo(index)">
-                        <em class="fa-solid fa-trash" ></em>
+                    <span class="todo-date">   
+                        {{ todo.date}}
                     </span>
-                    <span class="span-class" @click="changeText(index)">
-                        <em class="fa-solid fa-calendar-check" aria-hidden="true"></em>
+
+
+                    <!-- ICONE DI FONT AWESOME-->
+                    <span class="span-class" 
+                    @click="removeToDo(index)">
+                        <em class="fa-solid fa-trash"></em>
                     </span>
-                    <!-- END ICONE DI FONT AWESONE-->
+                    <span class="span-class" 
+                    @click="changeText(index)">
+                        <em class="fa-solid fa-calendar-check"></em>
+                    </span>
+                    <!-- END ICONE DI FONT AWESOME-->
 
                 </li>
 
             </ul>
+            <div v-else> Non hai nessun Todo da mostrare</div>
             <!-- END SINGOLO TODO-->
 
         </div>

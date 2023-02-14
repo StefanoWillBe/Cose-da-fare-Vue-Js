@@ -1,0 +1,125 @@
+/*RESET*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*LOGO*/
+.logo img {
+	padding: 5px 0;
+	width: 120px;
+	display: block;
+	margin: auto;
+}
+/*COMMON*/
+.button {
+	border: 1px solid green;
+	border-radius: 4px;
+	font-size: 12px;
+	background-color: white;
+	padding: 12px 12px 12px 12px;
+	transition: width 0.4s ease-in-out;
+	cursor: pointer;
+}
+.text-input {
+	min-width: 400px;
+	border: 1px solid green;
+	border-radius: 4px;
+	font-size: 12px;
+	background-color: white;
+	padding: 12px 12px 12px 12px;
+	transition: width 0.4s ease-in-out;
+
+}
+/*CONTAINER*/
+.container {
+	max-width: 80%;
+	margin: auto;
+}
+
+/*TODOS*/
+.new-todo {
+	display: block;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+.todos-container {
+	background-color: #F5F7F7;
+	padding: 25px;
+	border: 1px solid #F5F7F7;
+	border-radius: 10px;
+}
+.todo-list li {
+	position: relative;
+	list-style-type: none;
+	text-align: left;
+	font-size: 16px;
+	padding: 5px;
+	border-bottom: 1px solid gray;
+}
+.todo-list li .span-class {
+	float: right;
+}
+.span-class {
+	cursor: pointer;
+	padding: 5px;
+}
+.search {
+	float: right;
+	min-width: 50px;
+	border: 1px solid green;
+	border-radius: 4px;
+	font-size: 12px;
+	background-color: white;
+	padding: 12px 12px 12px 12px;
+	transition: width 0.4s ease-in-out;
+}
+
+.done {
+	background-color: chartreuse;
+}
+.fa-times-circle {
+	color: darkred;
+}
+.fa-check {
+	color: #008000;
+}
+
+.fa-trash {
+	color: darkred;
+}
+.fa-calendar-check {
+	color: #008000;
+}
+
+}
+.todo-date {
+	position: absolute;
+	right: 108px;
+	top: 11px;
+
+}
+
+/*Media query 	*/
+@media screen and (max-width: 375px) {
+	.text-input {
+		min-width: 100%;
+		margin-bottom: 10px;
+		margin-left: 0;
+	}
+	.new-todo {
+
+		text-align: left;
+	}
+	.search {
+		min-width: 30%;
+		margin-right: -16px;
+	}
+	.todos-container {
+		padding: 0;
+	}
+	.todo-date {
+		display: none;
+	}
+}

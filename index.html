@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ToDo List</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <!--    Vue 2-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!-- APP-->
+<div id="app">
+
+    <!-- CONTAINER-->
+    <div class="container">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="img/memo.png" alt="Logo">
+        </div>
+        <!-- LOGO -->
+
+        <!--        NEW TODO-->
+        <div class="new-todo">
+            <label>
+                <input v-model="userNewTodo" @keyup.enter="addNewTodo"
+                       type="text" class="text-input"
+                       placeholder="Cosa da fare">
+            </label>
+            <button class="button" @click="addNewTodo"> Aggiungi TODO</button>
+            <!--         END NEW TODO-->
+
+            <!--        SEARCH TODO-->
+            <label>
+                <input type="text" class="search"
+                       placeholder="Ricerca..." v-model="userFilter" @keyup="filterTodos">
+            </label>
+            <!--        SEARCH TODO-->
+
+        </div>
+
+        <!-- ADD LIST TODOS -->
+        <div class="todos-container">
+
+            <ul class="todo-list">
+
+                <!-- SINGOLO TODO-->
+                <li v-for="(todo, index) in todos"
+                    v-if="todo.visible"
+                    :class="{done: todo.isDone}">
+
+                    {{ todo.text }}
+
+                    <span class="todo-date">   {{ todo.date}}</span>
+
+
+                    <!-- ICONE DI FONT AWESONE-->
+                    <span class="span-class" @click="removeToDo(index)">
+                        <em class="fa-solid fa-trash" ></em>
+                    </span>
+                    <span class="span-class" @click="changeText(index)">
+                        <em class="fa-solid fa-calendar-check" aria-hidden="true"></em>
+                    </span>
+                    <!-- END ICONE DI FONT AWESONE-->
+
+                </li>
+
+            </ul>
+            <!-- END SINGOLO TODO-->
+
+        </div>
+
+
+        <!-- AND LIST TODOS -->
+    </div>
+
+    <!-- CONTAINER-->
+
+</div>
+<!-- END APP-->
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

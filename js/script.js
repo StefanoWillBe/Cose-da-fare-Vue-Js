@@ -33,8 +33,8 @@ var app = new Vue(
         },
         methods: {
             addNewTodo() {
-                let key = this.userNewTodo.trim();
-                if (key.length > 0 ) {
+                let userInput = this.userNewTodo.trim();
+                if (userInput.length > 0 ) {
                     this.todos.push({
                         text: this.userNewTodo,
                         visible: true,
@@ -42,6 +42,9 @@ var app = new Vue(
                         date: dayjs().format("DD/MM/YY")
                     });
                     this.userNewTodo = "";
+                }else{
+                    this.userNewTodo = "";
+                    alert("Il campo 'Cose da fare' non può essere vuoto");
                 }
 
             },

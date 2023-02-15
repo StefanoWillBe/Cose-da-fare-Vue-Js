@@ -33,7 +33,8 @@ var app = new Vue(
         },
         methods: {
             addNewTodo() {
-                if (this.userNewTodo.length > 0 || this.userNewTodo != "Backspace") {
+                let key = this.userNewTodo.trim();
+                if (key.length > 0 ) {
                     this.todos.push({
                         text: this.userNewTodo,
                         visible: true,

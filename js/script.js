@@ -9,25 +9,31 @@ var app = new Vue(
                     text: "Fare i compiti",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YY")
+                    date: "11/04/22"
                 },
                 {
                     text:  "Fare la Spesa",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YY")
+                    date: "21/05/22"
                 },
                 {
                     text: "Fare il bucato",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YY")
+                    date: "28/05/22"
                 },
                 {
                     text: "Portare la macchina dal meccanico",
                     visible: true,
                     isDone: false,
-                    date: dayjs().format("DD/MM/YY")
+                    date: "12/06/22"
+                },
+                {
+                    text: "Portare la Nonna dal Dottore",
+                    visible: true,
+                    isDone: false,
+                    date: "12/06/22"
                 }
             ],
         },
@@ -39,7 +45,7 @@ var app = new Vue(
                         text: this.userNewTodo,
                         visible: true,
                         isDone: false,
-                        date: dayjs().format("DD/MM/YY")
+                        date: dayjs().format("DD/MM/YY HH:mm:ss")
                     });
                     this.userNewTodo = "";
                 }else{

@@ -66,7 +66,8 @@
 	padding: 5px 5px 5px 0;
 }
 
-.todo-list li .span-class {
+.todo-list li .span-class,
+.todo-list li .toggle {
 	float: right;
 }
 .span-class {
@@ -87,18 +88,20 @@
 .done {
 	background-color: chartreuse;
 }
-.fa-times-circle {
-	color: darkred;
+
+.todo-list li.done .fa-star {
+	
+	color:  yellow;
 }
-.fa-check {
-	color: #008000;
-}
+
 
 .fa-trash {
 	color: darkred;
 }
-.fa-calendar-check {
-	color: #008000;
+.fa-star {
+	font-size: 18px;
+	padding-top: 3px;
+	color: #1190c1;
 }
 
 .todo-date {
